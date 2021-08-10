@@ -138,26 +138,6 @@ table, th, td {
     /* position: sticky; top: 0; z-index: 1; */
 }
 
-    .vertical-menu {
-        width: auto;
-    }
-  
-  .vertical-menu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc;
-  }
-  
-  .vertical-menu a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
   
 /* Change background color of buttons on hover */
 .tab button:hover {
