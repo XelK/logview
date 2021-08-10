@@ -17,52 +17,317 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
 </div>
 -->
     <header class="col-12 col-s-12 col-m-12">
-        Top bar
+        <!-- <img src="img/snort.jpg" alt="Logo" class="col-3"> -->
+        <h1>
+            Simple log visualizer
+        </h1>
+        <!-- <div class="col-3">Login</div> -->
     </header>
 
         <aside class="left col-2 col-s-2 col-m-0">
-            Left menu
             <ul>
+                <caption>Select file</caption>
                 <li>aaa</li>
                 <li>aaa</li>
                 <li>aaa</li>
                 <li>aaa</li>
-
             </ul>
         </aside>
 
         <section class="main col-8 col-s-10 col-m-12">
-                Main
+                <caption>
+                    Main </caption>
+                <table id="main_table">
+                    <tr>
+                        <th> Type </th>
+                        <th> Date </th>
+                        <th> Message </th>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+                    <tr>
+                        <td>Warning</td>
+                        <td>13/04/2017 17:44:21</td>
+                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>13/04/2017 21:55:18</td>
+                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
+                    </tr>
+                    <tr>
+                        <td>Fatal</td>
+                        <td>13/04/2017 22:13:39</td>
+                        <td>not a tree object</td>
+                    </tr>
+                    <tr>
+                        <td>Debug</td>
+                        <td>13/04/2017 18:25:59</td>
+                        <td>my.host - oh snap! another exception </td>
+                    </tr>
+                    <tr>
+                        <td>Info</td>
+                        <td>13/04/2017 21:50:17</td>
+                        <td>"GET / HTTP/1.1" 200 1225 </td>
+                    </tr>
+       
+                </table>
         </section>
 
         <aside class="right col-2 col-s-0 col-m-0">
-            Right menu
-            <ul>
-                <li>aaa</li>
-                <li>aaa</li>
-                <li>aaa</li>
-                <li>aaa</li>
+            <h1>Select log type:</h1>
+            <div class="vertical-menu">
+                <!-- <a href="http://" class="active">Access Log</a>
+                <a href="http://" >Error Log</a>
+                <a href="http://" >Custom Log</a> -->
 
-            </ul>
+                <div class="tab">
+
+                    <button class="tablinks" onclick="selectLog(event, 'Access')" id="defaultOpen">Access Log</button>
+                    <button class="tablinks" onclick="selectLog(event, 'Error')">Error Log</button>
+                    <button class="tablinks" onclick="selectLog(event, 'Custom')">Custom Log</button>
+                </div>
+            
+<!-- 
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            </div> -->
+
+            <!-- <ul>
+                <caption
+                Select log type:
+                </caption>
+                <li>Access log</li>
+                <li>Error log</li>
+                <li>Custom log</li>
+
+            </ul> -->
         </aside>
 
     
     <footer class="col-12 col-s-12 col-m-12">
-        Footer
+        <caption>
+            Footer
+        </caption>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto officia accusamus quis voluptatem esse odit suscipit voluptatibus quaerat delectus, quam obcaecati corrupti tempore, distinctio sapiente numquam repudiandae architecto molestias neque?
     </footer>
 
+<script>
 
+
+function selectLog(evt, logType) {
+  var i, tabcontent, tablinks;
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 
 
 </body>
 </html>
-
-<!--
-
-
-
-   
- 
-  
-
--->
