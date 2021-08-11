@@ -18,3 +18,10 @@ Consentire l'aggregazione di più eventi di sistema in un unico evento di proces
 - authentication -> `express-basic-auth`
 - application cache (pag. 225): con manifest possibile indicare quali risorse il browser deve salcare in cache https://www.quanzhanketang.com/html/html5_app_cache.html
 - notifiche push
+
+
+
+Log examples from:
+- http://www.almhuette-raith.at/apache-log/access.log
+- http://www.almhuette-raith.at/apache-log/error.log
+- 
