@@ -7,8 +7,9 @@ var session = require('express-session');
 var basicAuth = require('express-basic-auth');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
+
+
+//var apiRouter = require('./routes/api');
 
 
 var app = express();
@@ -17,13 +18,17 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
-// app.use(session({
-// 	secret: "password",
-// 	resave: false,
-// 	saveUninitialized: false,
-// 	maxAge: 3600000 //in millisecondi
-// }));
 
+// session usage
+app.use(session({
+	secret: "password",
+	resave: false,
+	saveUninitialized: false,
+	maxAge: 3600000 //in millisecondi
+}));
+
+
+// basic auth
 app.use(basicAuth({
 	users: {'admin': 'pwm'},
 	challenge: true,
@@ -36,11 +41,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', express.static('public'));
 
+app.use('/', express.static('public'));
 app.use('/', indexRouter);
-app.use('/api', apiRouter); // routes for api requests
-app.use('/users', usersRouter);
+//app.use('/api', apiRouter); // routes for api requests
+
+
+
+app.get('/api', function (req, res,next) {
+  console.log("type: " + req.query["type"] +
+              "\nfrom: " + req.query["from"] + 
+              "\nto: "+req.query["to"]);
+  res.send('Got a GET request at /api');
+})
+
+// app.post('/api', function (req, res) {
+//   res.send('Got a POST request at /api')
+// })
+// app.put('/api', function (req, res) {
+//   res.send('Got a PUT request at /api')
+// })
+// app.delete('/api', function (req, res) {
+//   res.send('Got a DELETE request at /api')
+// })
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
