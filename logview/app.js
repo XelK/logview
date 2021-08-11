@@ -9,7 +9,7 @@ var basicAuth = require('express-basic-auth');
 var indexRouter = require('./routes/index');
 
 
-//var apiRouter = require('./routes/api');
+var apiRouter = require('./routes/api');
 
 
 var app = express();
@@ -44,29 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', express.static('public'));
 app.use('/', indexRouter);
-//app.use('/api', apiRouter); // routes for api requests
 
-
-
-app.get('/api', function (req, res,next) {
-  console.log("type: " + req.query["type"] +
-              "\nfrom: " + req.query["from"] + 
-              "\nto: "+req.query["to"]);
-  res.send('Got a GET request at /api');
-})
-
-// app.post('/api', function (req, res) {
-//   res.send('Got a POST request at /api')
-// })
-// app.put('/api', function (req, res) {
-//   res.send('Got a PUT request at /api')
-// })
-// app.delete('/api', function (req, res) {
-//   res.send('Got a DELETE request at /api')
-// })
-
-
-
+app.use('/api', apiRouter); // routes for api requests
 
 
 // catch 404 and forward to error handler
