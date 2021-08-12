@@ -17,26 +17,41 @@ router.get('/', function (req, res,next) {
     else{
         //console.log('Got a GET request at /api with:'+type + " "+from+" "+to);
         let resp=getData(type,from,to);
-        let js = createJson(resp);
+        let js = createJson(resp,type);
         res.json(js);
     }
 });
 
-function createJson(data){
+function createJson(data,type){
     
     var temp=data.split("\n");
     var resp=[];
     var i=0;
-    temp.forEach((item)=>{
-        var w=item.match(/\[(.*?)\]/g);  // for logs with []
-        if(w !== null){
-            resp.push({});
-            resp[i].data=w[0].slice(1,-1);
-            resp[i].from=w[2].slice(1,-1);
-            resp[i].msg=item.slice(item.lastIndexOf(']')+2,);
-            i++;
-        }
-    });
+
+    if(type.localeCompare("error") == 0 || type.localeCompare("custom") == 0){
+        temp.forEach((item)=>{
+            var w=item.match(/\[(.*?)\]/g);  // for logs with []
+            if(w !== null){
+                resp.push({});
+                resp[i].data=w[0].slice(1,-1);
+                resp[i].from=w[2].slice(1,-1);
+                resp[i].msg=item.slice(item.lastIndexOf(']')+2,);
+                i++;
+            }
+        });
+    }
+
+    if(type.localeCompare("access") == 0){
+        temp.forEach((item)=>{
+            if(item.length >0){
+                resp.push({});
+                resp[i].data=item.match(/\[(.*?)\]/g)[0].slice(1,-1);
+                resp[i].from=item.match(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g)[0];
+                resp[i].msg=item.match(/\"(.*?)\"/g)[0].slice(1,-1);
+                i++;
+            }
+            });
+    }
     return resp;
 }
 
