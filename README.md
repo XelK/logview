@@ -20,8 +20,11 @@ Consentire l'aggregazione di più eventi di sistema in un unico evento di proces
 - notifiche push
 
 
-
-Log examples from:
-- http://www.almhuette-raith.at/apache-log/access.log
-- http://www.almhuette-raith.at/apache-log/error.log
-- 
+## Utils used for this project:
+### Log generator:
+Log examples generated with flog: https://github.com/mingrammer/flog
+- flog -f apache_common
+- flog -f apache_error
+- flog -f apache_combined
+### Regex resource:
+- https://regex101.com/
