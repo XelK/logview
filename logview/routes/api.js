@@ -28,35 +28,7 @@ function createJson(data,type){
     var resp=[];
     var i=0;
 
-
-
-    /* Apache error log format: 
-    * example: 
-        [Fri Sep 09 10:42:29.902022 2011] [core:error] [pid 35708:tid 4328636416] [client 72.15.99.187] File does not exist: /usr/local/apache2/htdocs/favicon.ico
-    */
-
-    if(type.localeCompare("error") == 0 ){
-        const regError=/\[([a-zA-Z]+) ([a-zA-Z]+) ([0-9]+) ([0-9]+):([0-9]+):([0-9]+) ([0-9]+)](?:.*):([a-zA-Z]+)](?:.*) ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(?:.*]) (.*)/;
-        temp.forEach((line)=>{
-            const w=line.match(regError);
-            if(w !== null){
-                resp.push({});
-                resp[i].ip=w[9];
-                resp[i].date={};
-                resp[i].date.day=w[3];
-                resp[i].date.weekDay=w[1];
-                resp[i].date.month=w[2];
-                resp[i].date.year=w[7];
-                resp[i].date.hour=w[4];
-                resp[i].date.minutes=w[5];
-                resp[i].date.seconds=w[6];
-                resp[i].msg=w[10];
-                resp[i].severity=w[8];
-                i++;
-            }
-        });
-    }   
-
+   
     /* apache common log format: LogFormat "%h %l %u %t \"%r\" %>s %b" common
     * see: https://httpd.apache.org/docs/2.4/logs.html
     * example:
@@ -80,7 +52,7 @@ function createJson(data,type){
     */
 
     if(type.localeCompare("access") == 0){
-        const regAccess=/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) (.*) (.*) \[([0-9]+)\/([a-zA-Z]+)\/([0-9]+)\:([[0-9]+)\:([0-9]+)\:([0-9]+)(?:.*)\] "(.*) (\/.*) (.*)\" (.*) ([0-9]+)/;
+        const regAccess=/(\d+\.\d+\.\d+\.\d+) (\S+) (\S+) \[(\d+)\/(\w+)\/(\d+)\:([\d]+)\:(\d+)\:(\d+)(?:.*)\] "(\w+) (\S+) (\S+)\" (\d+) (\d+)/;
         temp.forEach((line)=>{
             const w=line.match(regAccess);
             if(w !== null){
@@ -113,7 +85,7 @@ function createJson(data,type){
     127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
     */
     if(type.localeCompare("custom") == 0){
-        const regCustom=/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) (.*) (.*) \[([0-9]+)\/([a-zA-Z]+)\/([0-9]+)\:([[0-9]+)\:([0-9]+)\:([0-9]+)(?:.*)\] \"([a-zA-Z]+) (\S+) (\S+)\" (\d+) (\d+) "(\S+)" "(.*)"/;
+        const regCustom=/(\d+\.\d+\.\d+\.\d+) (\S) (\S+) \[(\d+)\/(\w+)\/(\d+)\:(\d+)\:(\d+)\:(\d+)(?:.*)\] \"(\w+) (\S+) (\S+)\" (\d+) (\d+) "(\S+)" "(.*)"/;
         temp.forEach((line)=>{
             const w=line.match(regCustom);
             if(w !== null){
@@ -135,6 +107,33 @@ function createJson(data,type){
                 resp[i].dim=w[14];
                 resp[i].referal=w[15];
                 resp[i].userAgent=w[16];
+                i++;
+            }
+        });
+    }
+
+    /* Apache error log format: 
+    * example: 
+        [Fri Sep 09 10:42:29.902022 2011] [core:error] [pid 35708:tid 4328636416] [client 72.15.99.187] File does not exist: /usr/local/apache2/htdocs/favicon.ico
+    */
+    if(type.localeCompare("error") == 0 ){
+        const regError=/\[(\w+) (\w+) (\d+) (\d+):(\d+):(\d+) (\d+)] \[(\w+):(\w+)](?:.*) (\d+\.\d+\.\d+\.\d+):(\d+)] (.*)/;
+        temp.forEach((line)=>{
+            const w=line.match(regError);
+            if(w !== null){
+                resp.push({});
+                resp[i].ip=w[9];
+                resp[i].date={};
+                resp[i].date.day=w[3];
+                resp[i].date.weekDay=w[1];
+                resp[i].date.month=w[2];
+                resp[i].date.year=w[7];
+                resp[i].date.hour=w[4];
+                resp[i].date.minutes=w[5];
+                resp[i].date.seconds=w[6];
+                resp[i].msg=w[10];
+                resp[i].severity=w[9];
+                resp[i].module=w[8];
                 i++;
             }
         });
