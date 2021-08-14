@@ -15,12 +15,34 @@ router.get('/', function (req, res,next) {
     if( (typeof type == 'undefined') || (typeof from == 'undefined') || (typeof to == 'undefined') )
         res.send('Got a GET request at /api without parameters');
     else{
-        //console.log('Got a GET request at /api with:'+type + " "+from+" "+to);
+
         let resp=getData(type,from,to);
         let js = createJson(resp,type);
-        res.json(js);
+
+        resp=[];
+        js.forEach(element => {
+            if(dateBetween(from,to,element.date))
+                resp.push(element);
+        });
+
+        res.json(resp);
     }
 });
+
+
+function dateBetween(start,end,data){
+    let s=start.replace(":"," ");
+    let e=end.replace(":"," ");
+    let d=data.day+"/"+data.month+"/"+data.year+" "+data.hour+":"+data.minutes+":"+data.seconds;
+    
+    s=Date.parse(s);
+    e=Date.parse(e);
+    d=Date.parse(d);
+
+    return( (s<=d) && (d<=e));
+}
+
+
 
 function createJson(data,type){
     
