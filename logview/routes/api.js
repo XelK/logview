@@ -5,6 +5,7 @@ const fs = require('fs');
 var router = express.Router();
 
 const lg = require('../libs/logfiles');
+const { search, param } = require('.');
 
 module.exports = router;
 
@@ -18,17 +19,19 @@ module.exports = router;
         from:req.params.from,
         to:req.params.to,
         // optional params:
-        ip:req.query["ip"],
-        sev:req.query["severity"],
-        module:req.query["module"],
-        msg:req.query["msg"]
+        params: {
+            ip:req.query["ip"],
+            severity:req.query["severity"],
+            module:req.query["module"],
+            msg:req.query["msg"]
+        }   
     }
 
-        console.log("type: "+request.type);
-        console.log("from: "+request.from);
-        console.log("to: "+request.to);
+        // console.log("type: "+request.type);
+        // console.log("from: "+request.from);
+        // console.log("to: "+request.to);
 
-        console.log("severity: "+request.sev);
+        console.log("--------------request: "+JSON.stringify(request.params));
 
 
         let resp=getData(request);
@@ -37,14 +40,22 @@ module.exports = router;
         resp=[];
         js.forEach(element => {
             if(dateBetween(request.from,request.to,element.date))
-                resp.push(element);
+                if(find(element,request.params))
+                    resp.push(element);
         });
 
         res.json(resp);
 });
 
 
-
+function find(item,params){
+    var ret=true;
+    Object.keys(params).forEach(pKey => {
+        if( (typeof params[pKey] != "undefined") && (params[pKey] != item[pKey]) )
+            ret=false;
+    });
+    return ret;
+}
 
 function dateBetween(start,end,data){
     let s=start.replace(":"," ");
@@ -57,8 +68,6 @@ function dateBetween(start,end,data){
 
     return( (s<=d) && (d<=e));
 }
-
-
 
 
 function createJson(data,type){

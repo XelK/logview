@@ -102,7 +102,6 @@ exports.jsonError =  function (data){
     var temp=data.split("\n");
     var resp=[];
     var i=0;
-    const regCustom=/(\d+\.\d+\.\d+\.\d+) (\S) (\S+) \[(\d+)\/(\w+)\/(\d+)\:(\d+)\:(\d+)\:(\d+)(?:.*)\] \"(\w+) (\S+) (\S+)\" (\d+) (\d+) "(\S+)" "(.*)"/;
     const regError=/\[(\w+) (\w+) (\d+) (\d+):(\d+):(\d+) (\d+)] \[(\w+):(\w+)](?:.*) (\d+\.\d+\.\d+\.\d+):(\d+)] (.*)/;
         temp.forEach((line)=>{
             const w=line.match(regError);
