@@ -6,34 +6,36 @@ var router = express.Router();
 
 module.exports = router;
 
-router.get('/', function (req, res,next) {
+    router.get('/:type/:from/:to', function (req, res,next) {
 
-    // mandatory parameters:
-    let type=req.query["type"];
-    let from=req.query["from"];
-    let to=req.query["to"];
+    console.log(req);
 
-    // other:
-    let ip=req.query["ip"];
-    let sev=req.query["severity"];
-    let module=req.query["module"];
-    let msg=req.query["msg"];
+    const request={
+        // mandatory parameters:
+        type: req.params.type,
+        from:req.params.from,
+        to:req.params.to,
+        // optional params:
+        ip:req.query["ip"],
+        sev:req.query["severity"],
+        module:req.query["module"],
+        msg:req.query["msg"]
+    }
 
-    if( (typeof type == 'undefined') || (typeof from == 'undefined') || (typeof to == 'undefined') )
-        res.send('Got a GET request at /api without parameters');
-    else{
+        console.log("type: "+request.type);
+        console.log("from: "+request.from);
+        console.log("to: "+request.to);
 
-        let resp=getData(type,from,to);
-        let js = createJson(resp,type);
+        let resp=getData(request);
+        let js = createJson(resp,request.type);
 
         resp=[];
         js.forEach(element => {
-            if(dateBetween(from,to,element.date))
+            if(dateBetween(request.from,request.to,element.date))
                 resp.push(element);
         });
 
         res.json(resp);
-    }
 });
 
 
@@ -173,9 +175,9 @@ function createJson(data,type){
     return resp;
 }
 
-function getData(type, from, to, callback){
+function getData(request){
 
-    let path=checkPath(type);
+    let path=checkPath(request.type);
 
     if (path == null) {
         return
