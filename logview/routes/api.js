@@ -8,9 +8,16 @@ module.exports = router;
 
 router.get('/', function (req, res,next) {
 
+    // mandatory parameters:
     let type=req.query["type"];
     let from=req.query["from"];
     let to=req.query["to"];
+
+    // other:
+    let ip=req.query["ip"];
+    let sev=req.query["severity"];
+    let module=req.query["module"];
+    let msg=req.query["msg"];
 
     if( (typeof type == 'undefined') || (typeof from == 'undefined') || (typeof to == 'undefined') )
         res.send('Got a GET request at /api without parameters');
@@ -28,6 +35,8 @@ router.get('/', function (req, res,next) {
         res.json(resp);
     }
 });
+
+
 
 
 function dateBetween(start,end,data){
@@ -144,7 +153,7 @@ function createJson(data,type){
             const w=line.match(regError);
             if(w !== null){
                 resp.push({});
-                resp[i].ip=w[9];
+                resp[i].ip=w[10];
                 resp[i].date={};
                 resp[i].date.day=w[3];
                 resp[i].date.weekDay=w[1];
@@ -153,7 +162,7 @@ function createJson(data,type){
                 resp[i].date.hour=w[4];
                 resp[i].date.minutes=w[5];
                 resp[i].date.seconds=w[6];
-                resp[i].msg=w[10];
+                resp[i].msg=w[12];
                 resp[i].severity=w[9];
                 resp[i].module=w[8];
                 i++;

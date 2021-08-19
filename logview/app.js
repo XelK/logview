@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 
 var apiRouter = require('./routes/api');
 
+const port = 3000;
 
 var app = express();
 
