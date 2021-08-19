@@ -11,8 +11,6 @@ module.exports = router;
 
     router.get('/:type/:from/:to', function (req, res,next) {
 
-    console.log(req);
-
     const request={
         // mandatory parameters:
         type: req.params.type,
@@ -26,13 +24,6 @@ module.exports = router;
             msg:req.query["msg"]
         }   
     }
-
-        // console.log("type: "+request.type);
-        // console.log("from: "+request.from);
-        // console.log("to: "+request.to);
-
-        console.log("--------------request: "+JSON.stringify(request.params));
-
 
         let resp=getData(request);
         let js = createJson(resp,request.type);
