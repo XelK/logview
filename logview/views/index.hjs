@@ -38,6 +38,7 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
         
             <div class="tabella">
                 <table id="main_table">
+{{!--                     
                     <tr>
                         <th> Type </th>
                         <th> Date </th>
@@ -63,212 +64,7 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
                         <td>13/04/2017 21:55:18</td>
                         <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
                     </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
-                    <tr>
-                        <td>Fatal</td>
-                        <td>13/04/2017 22:13:39</td>
-                        <td>not a tree object</td>
-                    </tr>
-                    <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
-                    </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-       
+        --}}
                 </table>
             </div>
             </section>
@@ -276,9 +72,9 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
         <aside class="right col-2 col-s-0 col-m-0">
             <h1>Select log type:</h1>
                 <div class="tab">
-                    <button class="tablinks" onclick="selectLog(event, 'Access')" id="defaultOpen">Access Log</button>
-                    <button class="tablinks" onclick="selectLog(event, 'Error')">Error Log</button>
-                    <button class="tablinks" onclick="selectLog(event, 'Custom')">Custom Log</button>
+                    <button class="tablinks" onclick="selectLog(event, 'access')" id="defaultOpen">Access Log</button>
+                    <button class="tablinks" onclick="selectLog(event, 'error')">Error Log</button>
+                    <button class="tablinks" onclick="selectLog(event, 'custom')">Custom Log</button>
                 </div>
 
         </aside>
@@ -302,7 +98,76 @@ function selectLog(evt, logType) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   evt.currentTarget.className += " active";
+
+  // Create an XMLHttpRequest object
+    const xhttp = new XMLHttpRequest();
+
+    // Define a callback function
+    xhttp.onload = function() {
+        //console.log(this.responseText);
+        const table = createTable(this.responseText);
+        //document.getElementById("main_table").innerHTML = table;
+
+    }
+    
+    var from="13-Aug-2021:11:40:52";
+    var to="14-Aug-2021:11:45:52";
+    var params="";
+
+    switch(logType){
+        case 'access':
+                break;
+        case 'error':
+                var params="?severity=emerg";
+                break;
+        case 'custom': 
+                break;
+    }
+
+
+
+
+    // Send a request
+    let request="api/"+logType+"/"+from+"/"+to+params;
+    xhttp.open("GET",request);
+    xhttp.send();
+
+
 }
+
+function createTable(data){
+    //return data;
+
+const jdata=JSON.parse(data);
+const t=document.getElementById("main_table");
+
+t.innerHTML = "";  // delete table before create new one
+
+var r=t.insertRow();
+var c;
+
+Object.keys(jdata[0]).forEach(key => {
+    var th=document.createElement('th');
+    r.appendChild(th);
+    th.innerHTML=key;
+});
+
+jdata.forEach(row => {
+    r=t.insertRow();
+    Object.values(row).forEach(item =>{
+        c=r.insertCell();
+        if(typeof item == "object"){
+            c.innerHTML=item.day+"/"+item.month+"/"+item.year+" "+item.hour+":"+item.minutes+":"+item.seconds;
+        }
+        else{
+            c.innerHTML=item;
+        }
+        
+    })
+})
+}
+
+
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
