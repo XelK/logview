@@ -9,7 +9,7 @@ const { search, param } = require('.');
 
 module.exports = router;
 
-    router.get('/:type/:from/:to', function (req, res,next) {
+router.get('/:type/:from/:to', function (req, res,next) {
 
     const request={
         // mandatory parameters:
@@ -17,12 +17,7 @@ module.exports = router;
         from:req.params.from,
         to:req.params.to,
         // optional params:
-        params: {
-            ip:req.query["ip"],
-            severity:req.query["severity"],
-            module:req.query["module"],
-            msg:req.query["msg"]
-        }   
+        params:req.query
     }
 
         let resp=getData(request);
@@ -62,25 +57,21 @@ function dateBetween(start,end,data){
 
 
 function createJson(data,type){
-    
-    if(type.localeCompare("access") == 0){
-        return jsonAccess(data);
-    }
-    if(type.localeCompare("error") == 0){
-        return lg.jsonError(data);
+   
+    switch(type){
+        case 'access': return lg.jsonAccess(data);
+        case 'error':  return lg.jsonError(data);
+        case 'custom': return lg.jsonCustom(data);
     }
 
-    if(type.localeCompare("custom") == 0){
-        return jsonCustom(data);
-    }
 }
 
 function getData(request){
 
-    let path=checkPath(request.type);
+    let path=createPath(request.type);
 
     if (path == null) {
-        return
+        return null;
     }
     response = fs.readFileSync(path, 'utf8', (err,data)=>{
         if(err) console.error(err);
@@ -88,16 +79,14 @@ function getData(request){
     return response;
 }
 
-function checkPath(type){
-    // check log type
+function createPath(type){
+    // tansform log type into log file with destination
     let path ="../logs/";
-    if (type.localeCompare("access") == 0 ) {
-        path+="access.log";
-    } else if (type.localeCompare("error") == 0) {
-        path+="error.log";
-    } else if (type.localeCompare("custom") == 0) {
-        path+="custom.log";
-    } else{
+    const logs=["access", "error", "custom"];
+
+    if(logs.includes(type))
+        path+=type+".log";
+    else{
         console.log("Wrong request!");
         path=null;
     }
