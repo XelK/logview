@@ -7,8 +7,6 @@ var session = require('express-session');
 var basicAuth = require('express-basic-auth');
 
 var indexRouter = require('./routes/index');
-
-
 var apiRouter = require('./routes/api');
 
 const port = 3000;
@@ -19,7 +17,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
-
 // session usage
 app.use(session({
 	secret: "password",
@@ -27,7 +24,6 @@ app.use(session({
 	saveUninitialized: false,
 	maxAge: 3600000 //in millisecondi
 }));
-
 
 // basic auth
 app.use(basicAuth({
@@ -47,9 +43,6 @@ app.use('/', express.static('public'));
 app.use('/', indexRouter);
 
 app.use('/api', apiRouter); // routes for api requests
-
-
-
 
 
 // catch 404 and forward to error handler

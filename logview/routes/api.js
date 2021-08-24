@@ -37,41 +37,11 @@ router.get('/:type/:from/:to', function (req, res,next) {
 function find(item,params){
     var ret=true;
     Object.keys(params).forEach(pKey => {
-//        if( (typeof params[pKey] != "undefined") && (params[pKey] != item[pKey]) )
         if( (typeof params[pKey] != "undefined") && (!item[pKey].includes(params[pKey])) )
-
             ret=false;
-
-        //     ret=true;
-        // if( (typeof params[pKey] != "undefined") && (!item[pKey].includes(params[pKey])) )
-
-        //     ret=false;
-
     });
     return ret;
 }
-
-// function find(item,params){
-//     var ret=true;
-//     if(paramas[pkey]=="undefined")
-//         return ret;
-
-//     Object.keys(params).forEach(pKey => {
-// //        if( (typeof params[pKey] != "undefined") && (params[pKey] != item[pKey]) )
-//         if( (typeof params[pKey] != "undefined") && (item[pKey].includes(params[pKey])) )
-
-//             // ret=false;
-
-//             ret=true;
-//         if( (typeof params[pKey] != "undefined") && (!item[pKey].includes(params[pKey])) )
-
-//             ret=false;
-
-//     });
-//     return ret;
-// }
-
-
 function dateBetween(start,end,data){
     let s=start.replace(":"," ");
     let e=end.replace(":"," ");

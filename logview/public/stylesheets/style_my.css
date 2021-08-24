@@ -89,6 +89,7 @@ footer{
 .main{
     background-color: red;
     display: inline-block;
+    padding: 1%;
 }
 
 /* hide scrollbar but allow scrolling */
@@ -168,5 +169,5 @@ table, th, td {
   }
 
   .date input{
-    max-width: 90%;
+    width: 100%;
   }

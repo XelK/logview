@@ -16,11 +16,6 @@ function selectLog(evt, logType) {
       t=to.match(reg);
       to=t[3]+"-"+month[t[2]%10-1]+"-"+t[1]+":"+t[4]+":"+t[5]+":"+t[6];
 
-
-      console.log("from: " +from);
-      console.log("to: " +to);
-      console.log("paramas: " +params);
-
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
