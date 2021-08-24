@@ -166,3 +166,7 @@ table, th, td {
   .tab button.active {
     background-color: #ccc;
   }
+
+  .date input{
+    max-width: 90%;
+  }
