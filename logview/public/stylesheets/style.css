@@ -1,6 +1,6 @@
 
 body{
-    background-color: black;
+    background-color: gainsboro;
     height: 90%;
     font-family:Arial, Helvetica, sans-serif;
 
@@ -92,18 +92,18 @@ body{
 /* TEST:  */
 
 header{
-    background-color: yellow;
+    background-color: gainsboro;
     text-align: center;
     
 }
 footer{
-    background-color: green;
+    background-color: gainsboro;
     text-align: left;
     padding: 0px;
 }
 
 .main{
-    background-color: red;
+    background-color: gainsboro;
     display: inline-block;
     padding: 1%;
 }
@@ -120,11 +120,8 @@ footer{
     display: none; /* for Chrome, Safari, and Opera */
 }
 
-.left{
-    background-color: blue;
-}
 .right{
-    background-color: aqua;
+    background-color: gainsboro;
 }
 
 
