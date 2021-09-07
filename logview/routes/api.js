@@ -4,7 +4,6 @@ var router = express.Router();
 const lg = require('../libs/logfiles');
 
 var createError = require('http-errors');
-const { on } = require('events');
 
 
 module.exports = router;
