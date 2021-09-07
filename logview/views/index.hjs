@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="javascripts/form.js"></script>
+    <script src="https://kit.fontawesome.com/e560cf87c3.js" crossorigin="anonymous"></script>
     <title>LogView</title>
 </head>
 <body>
@@ -49,6 +50,7 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
             </main>
 
         <aside class="right col-2 col-s-0 col-m-0">
+                <h2>Select Logs:</h2>
                 <div class="date">
                     <label for="from">FROM:</label>
                         <input type="datetime-local" 
@@ -64,8 +66,6 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
 
                     <label for="params">PARAMS:</label>            
                         <input type="text" name="params" id="params">
-                        {{!-- <textarea name="params" rows="2"></textarea> --}}
-
                 </div>
 
                 <div class="tab">
@@ -75,7 +75,7 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
                 </div>
                 
                 <div class="manual">
-                    <h3>Manual:</h3>
+                    <h2>Manual:</h2>
                     <h4>Interface:</h4>
                     <ol>
                         <li>Select from date</li>
@@ -109,7 +109,11 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
         <p> Simple web application, developed for the course of "Programmazione Web e Mobile" of <a href="https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche"> Sicurezza dei Sistemi e delle Reti Informatiche</a> at University of Milan. This application was created with use of HTML5, CSS3, Javascript for the frontend, NodeJs (Expressjs framework) for the backend. It also implement REST api call that return json file with searched logs items. Html/CSS was checked with <a href="https://validator.w3.org/">w3c validator</a> </p>
 
         <div id="credits">
-            <a href="https://xelk.me/">Oleksandr Kubashov</a> @ <a href="https://github.com/XelK/logview">github</a>     
+            <a href="https://xelk.me/">Oleksandr Kubashov</a> @ <a href="https://github.com/XelK/logview"><i class="fab fa-github"></i></a>
+             {{!-- <a href="https://github.com/XelK/logview">github</a>
+            <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+           --}}
+     
         </div>
 
     </footer>

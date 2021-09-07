@@ -110,6 +110,13 @@ header{
     border-color: black; */
 }
 
+.manual>ul{
+  padding-left: 2em;
+}
+.manual>ol{
+  padding-left: 2em;
+}
+
 /* aside{
   border-style: solid;
   border-color: black;
