@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> <!-- buona norma dichiarare la codifica-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="stylesheets/style.css">
-    <script type="text/javascript" src="javascripts/form.js"></script>
+    <script src="javascripts/form.js"></script>
     <title>LogView</title>
 </head>
 <body>
@@ -38,25 +38,11 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
                         <th> Message </th>
                     </tr>
                     <tr>
-                        <td>Debug</td>
-                        <td>13/04/2017 18:25:59</td>
-                        <td>my.host - oh snap! another exception </td>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
                     </tr>
-                    <tr>
-                        <td>Info</td>
-                        <td>13/04/2017 21:50:17</td>
-                        <td>"GET / HTTP/1.1" 200 1225 </td>
-                    </tr>
-                    <tr>
-                        <td>Warning</td>
-                        <td>13/04/2017 17:44:21</td>
-                        <td>DocumentRoot [/var/www/porto-admin/] does not exist </td>
-                    </tr>
-                    <tr>
-                        <td>Error</td>
-                        <td>13/04/2017 21:55:18</td>
-                        <td>File does not exist: /var/www/porto-admin/favicon.ico</td>
-                    </tr>
+
        
                 </table>
             </div>
@@ -65,13 +51,13 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
         <aside class="right col-2 col-s-0 col-m-0">
             <h1>Select log type:</h1>
                 <div class="date">
-                    <label for="from:">FROM:</label>
+                    <label for="from">FROM:</label>
                         <input type="datetime-local" 
                                name="from:" id="from"
                                value="2021-08-01T01:00:00"
                                step="1">
                     
-                    <label for="to:">TO:</label>
+                    <label for="to">TO:</label>
                         <input type="datetime-local" 
                                 name="to:" id="to"
                                 value="2021-08-31T01:00:00" 
@@ -95,7 +81,7 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
 
     
     <footer class="col-12 col-s-12 col-m-12">
-        Usage:
+        <h3>Usage:</h3>
         <p> Select date range in from/to fields. You can also insert parameters to search in params field, use "param01=value,param02=value" syntax.
             Press type of log to print.
         </p>

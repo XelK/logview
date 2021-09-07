@@ -1,11 +1,7 @@
 var express = require('express');
-const { type } = require('os');
 const fs = require('fs');
-
 var router = express.Router();
-
 const lg = require('../libs/logfiles');
-const { search, param } = require('.');
 
 module.exports = router;
 

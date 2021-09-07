@@ -21,6 +21,7 @@ body{
     font-size: medium;
   }
 
+
 /* Per desktop*/
 @media only screen and (min-width: 768px) {
     .col-1 {width: 8.33%;}
@@ -89,21 +90,15 @@ body{
     padding: 5px;
 }
 
-/* TEST:  */
-
 header{
-    background-color: gainsboro;
-    text-align: center;
-    
+    text-align: center;    
 }
 footer{
-    background-color: gainsboro;
     text-align: left;
     padding: 0px;
 }
 
 .main{
-    background-color: gainsboro;
     display: inline-block;
     padding: 1%;
 }
@@ -143,8 +138,17 @@ table, th, td {
 #main_table th {
     color: white;
     background-color: black;
-    /* position: sticky; top: 0; z-index: 1; */
-}
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 10; 
+
+  }
+
+#main_table td {
+    white-space: nowrap;   
+  }
+
 
 
 /* Style the tab */
