@@ -19,92 +19,113 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
 </div>
 -->
     <header class="col-12 col-s-12 col-m-12">
-        <!-- <img src="img/snort.jpg" alt="Logo" class="col-3"> -->
         Simple log visualizer
-
-        {{!-- <h1>
-            Simple log visualizer
-        </h1> --}}
-        <!-- <div class="col-3">Login</div> -->
     </header>
 
-        <main class="main col-10 col-s-12 col-m-12">
-        
-            <div class="tabella">
-                <table id="main_table">
-                    
-                    <tr>
-                        <th> Type </th>
-                        <th> Date </th>
-                        <th> Message </th>
-                    </tr>
-                    <tr>
-                        <td>Null</td>
-                        <td>Null</td>
-                        <td>Null</td>
-                    </tr>
 
-       
-                </table>
-            </div>
-            </main>
-
-        <aside class="right col-2 col-s-0 col-m-0">
-                <h2>Select Logs:</h2>
-                <div class="date">
-                    <label for="from">FROM:</label>
-                        <input type="datetime-local" 
-                               name="from:" id="from"
-                               value="2021-08-01T01:00:00"
-                               step="1">
-                    
-                    <label for="to">TO:</label>
-                        <input type="datetime-local" 
-                                name="to:" id="to"
-                                value="2021-08-31T01:00:00" 
-                                step="1">
-
-                    <label for="params">PARAMS:</label>            
-                        <input type="text" name="params" id="params">
-                </div>
-
-                <div class="tab">
-                    <button class="tablinks" onclick="selectLog(event, 'access')" id="defaultOpen">Access Log</button>
-                    <button class="tablinks" onclick="selectLog(event, 'error')">Error Log</button>
-                    <button class="tablinks" onclick="selectLog(event, 'custom')">Custom Log</button>
-                </div>
+    <!-- 
+        ###########################  
+            Main section with table 
+        ###########################
+    -->
+    <main class="main col-10 col-s-12 col-m-12">
+        <!--  
+            Empty default table 
+        -->
+        <div class="tabella">
+            <table id="main_table">
                 
-                <div class="manual">
-                    <h2>Manual:</h2>
-                    <h4>Interface:</h4>
-                    <ol>
-                        <li>Select from date</li>
-                        <li>Select to date</li>
-                        <li>(Optional) Insert parameters to search in params field, use "param01=value,param02=value" syntax</li>
-                        <li>Click on log type to visualize</li>
-                    </ol>
-                    <h4>API call:</h4>
+                <tr>
+                    <th> Type </th>
+                    <th> Date </th>
+                    <th> Message </th>
+                </tr>
+                <tr>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                </tr>
+            </table>
+        </div>
+        </main>
+
+
+    <!-- 
+        ###########################  
+            Menu on the right 
+        ###########################
+    -->
+    <aside class="right col-2 col-s-0 col-m-0">
+
+            <!--  
+                Input form 
+            -->
+            <h2>Select Logs:</h2>
+            <div class="date">
+                <label for="from">FROM:</label>
+                    <input type="datetime-local" 
+                            name="from:" id="from"
+                            value="2021-08-01T01:00:00"
+                            step="1">
+                
+                <label for="to">TO:</label>
+                    <input type="datetime-local" 
+                            name="to:" id="to"
+                            value="2021-08-31T01:00:00" 
+                            step="1">
+
+                <label for="params">PARAMS:</label>            
+                    <input type="text" name="params" id="params">
+            </div>
+
+            <div class="tab">
+                <button class="tablinks" onclick="selectLog(event, 'access')" id="defaultOpen">Access Log</button>
+                <button class="tablinks" onclick="selectLog(event, 'error')">Error Log</button>
+                <button class="tablinks" onclick="selectLog(event, 'custom')">Custom Log</button>
+            </div>
+
+
+            <!--  
+                Manual page 
+            -->
+
+            <div class="manual">
+                <h2>Manual:</h2>
+                <h4>Interface:</h4>
+                <ol>
+                    <li>Select from date</li>
+                    <li>Select to date</li>
+                    <li>(Optional) Insert parameters to search in params field, use "param01=value,param02=value" syntax</li>
+                    <li>Click on log type to visualize</li>
+                </ol>
+                <h4>API call:</h4>
+                <ul>
+                    <li>http://usr:psw@host:p/api/type/from/to?par
                     <ul>
-                        <li>http://usr:psw@host:p/api/type/from/to?par
-                        <ul>
-                            <li>usr: username</li>
-                            <li>psw: password</li>
-                            <li>p:port</li>
-                            <li>type: error/access/custom</li>
-                            <li>from: start date format: 13-Aug-2021:10:39:45 </li>
-                            <li>to: end date, same format as from</li>
-                            <li>par: (optional) list of parameters, format:
-                                <ul>
-                                    <li>param1=value&amp;param2=value</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <li>usr: username</li>
+                        <li>psw: password</li>
+                        <li>p:port</li>
+                        <li>type: error/access/custom</li>
+                        <li>from: start date format: 13-Aug-2021:10:39:45 </li>
+                        <li>to: end date, same format as from</li>
+                        <li>par: (optional) list of parameters, format:
+                            <ul>
+                                <li>param1=value&amp;param2=value</li>
+                            </ul>
                         </li>
                     </ul>
-                </div>
-        </aside>
+                    </li>
+                </ul>
+            </div>
+    </aside>
 
     
+    <!-- 
+        ###########################  
+            Footer with project information 
+        ###########################
+    -->
+
     <footer class="col-10 col-s-10 col-m-10">
         <p> Simple web application, developed for the course of "Programmazione Web e Mobile" of <a href="https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche"> Sicurezza dei Sistemi e delle Reti Informatiche</a> at University of Milan. This application was created with use of HTML5, CSS3, Javascript for the frontend, NodeJs (Expressjs framework) for the backend. It also implement REST api call that return json file with searched logs items. Html/CSS was checked with <a href="https://validator.w3.org/">w3c validator</a> </p>
 

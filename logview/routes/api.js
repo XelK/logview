@@ -10,6 +10,13 @@ module.exports = router;
 
 router.get('/:type/:from/:to', function (req, res,next) {
 
+    /**
+     * Object that contain parameters passed via REST call.
+     * @param  type [type of log to read, can be access/error/custom]
+     * @param  from [start date]
+     * @param  to [end date]
+     * @param  params [optional list of parameters]
+     */
     const request={
         // mandatory parameters:
         type: req.params.type,
@@ -43,6 +50,11 @@ router.get('/:type/:from/:to', function (req, res,next) {
 });
 
 
+/**
+ * Function that search if param passed via REST is present in the js object 
+ * @param  item [item from file log]
+ * @param  params [array of params passed via REST call]
+ */
 function find(item,params){
     var ret=true;
     Object.keys(params).forEach(pKey => {
@@ -52,6 +64,11 @@ function find(item,params){
     return ret;
 }
 
+/**
+ * Function that check the correctness of data range 
+ * @param  start [start date]
+ * @param  end [end date]
+ */
 function dataRangeError(start,end){
     let s=start.replace(":"," ");
     let e=end.replace(":"," ");
@@ -62,7 +79,12 @@ function dataRangeError(start,end){
         return true;
     return false;
 }
-
+/**
+ * Function that check if date from log is between start/end date passed by user 
+ * @param  start [start date]
+ * @param  end [end date]
+ * @param  data [date from file]
+ */
 function dateBetween(start,end,data){
     let s=start.replace(":"," ");
     let e=end.replace(":"," ");
@@ -77,8 +99,12 @@ function dateBetween(start,end,data){
 }
 
 
-function createJson(data,type){
-   
+/**
+ * Function that select the correct log file and read the content into json format.
+ * @param  data [data that will contain json]
+ * @param  type [type of log to read, can be access/error/custom]
+ */
+function createJson(data,type){   
     switch(type){
         case 'access': return lg.jsonAccess(data);
         case 'error':  return lg.jsonError(data);
@@ -87,6 +113,10 @@ function createJson(data,type){
 
 }
 
+/**
+ * Function that read file.
+ * @param  reques [object with requested parameters]
+ */
 function getData(request){
 
     let path=createPath(request.type);
@@ -100,6 +130,10 @@ function getData(request){
     return response;
 }
 
+/**
+ * Function that check if correct type was selected and if the corrispondent file exists.
+ * @param  reques [object with requested parameters]
+ */
 function createPath(type){
     // tansform log type into log file with destination
     let path ="../logs/";

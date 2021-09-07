@@ -1,11 +1,17 @@
 
-function selectLog(evt, logType) {
-    var i, tabcontent, tablinks;
+/**
+ * Function used into html page. 
+ * Read parameters insereted into html page. Convert data parameters, check the correctness 
+ * of parameters and execute the HttpRequest to the api page
+ * @param  button [selected button on the page]
+ * @param  logType [type of log selected, can be: access/error/custom]
+ */
+function selectLog(button, logType) {
+    var i, tablinks;
 
       let from=document.getElementById("from").value;
       let to=document.getElementById("to").value;
       let params=document.getElementById("params").value;
-
 
       const month=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -20,7 +26,7 @@ function selectLog(evt, logType) {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    evt.currentTarget.className += " active";
+    button.currentTarget.className += " active";
   
     // Create an XMLHttpRequest object
       const xhttp = new XMLHttpRequest();
@@ -35,11 +41,6 @@ function selectLog(evt, logType) {
           }
       }
     }
-  
-    // xhttp.onloadstart= function(){
-    //     alert("Loading ... ");
-    // }
-
       // Send a request
       if (params.length>0)
         var request="api/"+logType+"/"+from+"/"+to+"/?"+params.replace(/\,/g,"&");
@@ -48,10 +49,14 @@ function selectLog(evt, logType) {
       xhttp.open("GET",request, true);
       xhttp.send();
   
-  
   }
   
 
+  /**
+ * Function that update table with selected parameters. 
+ * Read data, extract informations and create html table 
+ * @param  data [data in json format created from log file ]
+ */
   function createTable(data){
 
   const jdata=JSON.parse(data);

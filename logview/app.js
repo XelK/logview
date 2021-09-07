@@ -17,14 +17,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
-// session usage
-app.use(session({
-	secret: "password",
-	resave: false,
-	saveUninitialized: false,
-	maxAge: 3600000 //in millisecondi
-}));
-
 // basic auth
 app.use(basicAuth({
 	users: {'admin': 'pwm'},

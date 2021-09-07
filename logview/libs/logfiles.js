@@ -1,4 +1,8 @@
 
+/**
+ * Function that trasform apache ACCESS log file into json 
+ * @param  data [file content]
+ */
 exports.jsonAccess = function (data){
 
     /* apache common log format: LogFormat "%h %l %u %t \"%r\" %>s %b" common
@@ -52,7 +56,10 @@ exports.jsonAccess = function (data){
     return resp;
 }
 
-
+/**
+ * Function that trasform apache CUSTOM log file into json 
+ * @param  data [file content]
+ */
 exports.jsonCustom =  function (data){
 
     /* Apache combined log format.
@@ -94,6 +101,10 @@ exports.jsonCustom =  function (data){
     return resp;
 }
 
+/**
+ * Function that trasform apache ERROR log file into json 
+ * @param  data [file content]
+ */
 exports.jsonError =  function (data){
     /* Apache error log format:
     * example:
