@@ -26,22 +26,32 @@ function selectLog(evt, logType) {
       const xhttp = new XMLHttpRequest();
   
       // Define a callback function
-      xhttp.onload = function() {
-          const table = createTable(this.responseText);
-       
+      xhttp.onreadystatechange=function(){
+        if (xhttp.readyState === 4) {
+          if (xhttp.status === 200) {
+            createTable(this.responseText);
+          } else {
+             alert("Error code: "+xhttp.status+"\nPlease insert correct parameters!");
+          }
       }
+    }
   
+    // xhttp.onloadstart= function(){
+    //     alert("Loading ... ");
+    // }
+
       // Send a request
       if (params.length>0)
         var request="api/"+logType+"/"+from+"/"+to+"/?"+params.replace(/\,/g,"&");
       else
         var request="api/"+logType+"/"+from+"/"+to;
-      xhttp.open("GET",request);
+      xhttp.open("GET",request, true);
       xhttp.send();
   
   
   }
   
+
   function createTable(data){
 
   const jdata=JSON.parse(data);
