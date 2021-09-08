@@ -67,7 +67,7 @@ aside{
     .col-s-12 {width: 100%;}
     header{height: 5vh;}
     footer{height: 9vh;}
-    .main, .right {height: 85vh;}
+    main, aside {height: 83vh;}
   }
 
 /* Per smartphone */
@@ -87,7 +87,7 @@ aside{
     .col-m-12 {width: 100%;}
     header{height: 5vh;}
     footer{height: 9vh;}
-    .main {height: 85vh;}
+    main, aside {height: 83vh;}
 
   }
 
