@@ -91,14 +91,14 @@ Il numero della colonna dentro la riga deve sempre arrivare a 12:
 
             <div class="manual">
                 <h2>Manual:</h2>
-                <h4>Interface:</h4>
+                <h3>Interface:</h3>
                 <ol>
                     <li>Select from date</li>
                     <li>Select to date</li>
                     <li>(Optional) Insert parameters to search in params field, use "param01=value,param02=value" syntax</li>
                     <li>Click on log type to visualize</li>
                 </ol>
-                <h4>API call:</h4>
+                <h3>API call:</h3>
                 <ul>
                     <li>http://usr:psw@host:p/api/type/from/to?par
                     <ul>

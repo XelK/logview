@@ -27,6 +27,10 @@ body{
   }
 
 
+aside{
+  font-size: small;
+  }
+
 /* Per desktop*/
 @media only screen and (min-width: 768px) {
     .col-1 {width: 8.33%;}
@@ -43,7 +47,7 @@ body{
     .col-12 {width: 100%;}
     header{height: 5vh;}
     footer{height: 9vh;}
-    main, aside {height: 85vh;}
+    main, aside {height: 83vh;}
 }
 
 /* Per tablet */
